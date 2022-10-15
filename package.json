@@ -1,0 +1,22 @@
+{
+  "name": "stuff-things-times-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ajaws2022/Stuff-Things-Times-Tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ajaws2022/Stuff-Things-Times-Tracker/issues"
+  },
+  "homepage": "https://github.com/Ajaws2022/Stuff-Things-Times-Tracker#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}
