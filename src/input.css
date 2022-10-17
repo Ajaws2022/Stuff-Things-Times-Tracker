@@ -29,11 +29,26 @@
 }
 
 .hourRow input {
-    @apply w-96 h-16 bg-gray-200;
+    @apply w-96 h-16;
 }
 
 .dateAndTime {
     @apply
     text-center
     m-5;
+}
+
+.past{
+@apply
+bg-red-200;
+}
+
+.present{
+@apply
+bg-green-300;
+}
+
+.future{
+    @apply
+bg-orange-300;
 }
