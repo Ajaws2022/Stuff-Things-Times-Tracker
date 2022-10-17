@@ -2,3 +2,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hourRow {
+    @apply 
+    flex
+     flex-row 
+     place-content-center 
+     m-1.5 
+     justify-evenly;
+}
+
+.hourRow h3 {
+    @apply 
+    p-5 
+    border-r-4 
+    border-gray-200 
+    w-20;
+}
+
+.hourRow button {
+    @apply 
+    flex 
+    place-content-center 
+    p-0.5 
+    w-20;
+}
+
+.hourRow input {
+    @apply w-96 h-16 bg-gray-200;
+}
+
+.dateAndTime {
+    @apply
+    text-center
+    m-5;
+}

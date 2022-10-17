@@ -6,3 +6,11 @@
 
 // create an if statement that compares the current time to the list and changes the color based on past, present, or future
 
+//   var icon = $("#9am").button( "option", "icon" );
+ function setTime(){
+    var today = moment();
+
+    $(".dateAndTime").text(today.format("MMM Do, YYYY  h:mm a"));
+}
+
+setInterval(setTime(), (1000 * 60) * 1);
