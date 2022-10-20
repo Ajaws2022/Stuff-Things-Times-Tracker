@@ -3,6 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.dateAndTime {
+    @apply
+    text-center
+    m-5;
+}
+
 .hourRow {
     @apply 
     flex
@@ -30,12 +37,6 @@
 
 .hourRow input {
     @apply w-96 h-16;
-}
-
-.dateAndTime {
-    @apply
-    text-center
-    m-5;
 }
 
 .past{
