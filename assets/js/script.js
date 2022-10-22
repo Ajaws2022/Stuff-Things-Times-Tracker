@@ -58,29 +58,48 @@ setInterval(
 
 
 function submitTimes(){
-    var inputValue = $(this).siblings(".input").val();
+    var inputValue = $(this).siblings(".input").val()
     var inputKey = $(this).siblings('h3').text()
     
     console.log(inputValue)
     console.log(inputKey)
 
-    var time = $(this).siblings('id')
-    localStorage.setItem('inputKey', 'inputValue');
+    // var time = $(this).siblings('id')
+    localStorage.setItem(inputKey, `${inputValue}`)
 
-    // console.log(localStorage.getItem('hours'))
-    // for(let i = 0; i < items; i++){
-    //    items.append('entryArea.textcontent')
-    //    localStorage.setItem('hours', 'items')
-    //    var subTimes = localStorage.getItem('hours')
-    //    console.log(subTimes)
-    // }
+   
+
+    }
+var inputBoxes = document.querySelectorAll('.input');
+
+function setText(){
+    for(let i = 0; i<inputBoxes.length; i++){
+        // loops through all of the input elements setting the text content to an empty string
+        inputBoxes[i].textContent = ("");
+
+        // creates a dynamic key for whichever element it gets associated with
+        let inputContentKey = $(this).siblings('h3').text();
+
+        // Uses the key name generated above to pull and parse an item from storage
+        // let inputContent = JSON.parse(localStorage.getItem(inputContentKey));
+
+    
+        // loops through boxes again setting the text content to the stored value
+        inputBoxes[i].textContent = localStorage.getItem(inputContentKey);
+
+        console.log(inputBoxes[3].textContent)
     }
 
+    
+}
 
 checkTime()
 setTime()
+// setText()
+window.addEventListener('load', setText)
 
 // subButton.addEventListener('click', submitTimes)
+
 // needed a loop to target all of the buttons on the page and not the first
 for(let i = 0; i<subButton.length; i++){
     subButton[i].addEventListener('click', submitTimes)
