@@ -608,19 +608,23 @@ video {
 .hourRow input {
   height: 4rem;
   width: 24rem;
+  padding: 0.125rem;
 }
 
 .past {
   --tw-bg-opacity: 1;
   background-color: rgb(254 202 202 / var(--tw-bg-opacity));
+  padding: 0.125rem;
 }
 
 .present {
   --tw-bg-opacity: 1;
   background-color: rgb(134 239 172 / var(--tw-bg-opacity));
+  padding: 0.125rem;
 }
 
 .future {
   --tw-bg-opacity: 1;
   background-color: rgb(253 186 116 / var(--tw-bg-opacity));
+  padding: 0.125rem;
 }

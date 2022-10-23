@@ -36,20 +36,27 @@
 }
 
 .hourRow input {
-    @apply w-96 h-16;
+    @apply 
+    w-96 
+    h-16
+    p-0.5;
+    
 }
 
 .past{
 @apply
-bg-red-200;
+bg-red-200
+p-0.5;
 }
 
 .present{
 @apply
-bg-green-300;
+bg-green-300
+p-0.5;
 }
 
 .future{
     @apply
-bg-orange-300;
+bg-orange-300
+p-0.5;
 }

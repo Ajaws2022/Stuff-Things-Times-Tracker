@@ -75,19 +75,28 @@ var inputBoxes = document.querySelectorAll('.input');
 function setText(){
     for(let i = 0; i<inputBoxes.length; i++){
         // loops through all of the input elements setting the text content to an empty string
-        inputBoxes[i].textContent = ("");
-
+        // inputBoxes[i].textContent = ("");
         // creates a dynamic key for whichever element it gets associated with
-        let inputContentKey = $(this).siblings('h3').text();
+        var index_to_time = {
+            9: "9am",
+            10: "10am",
+            11: "11am",
+            12: "12pm",
+            13: "1pm",
+            14: "2pm",
+            15: "3pm",
+            16: "4pm"
+        }
+        let inputContentKey = index_to_time[i + 9];
 
         // Uses the key name generated above to pull and parse an item from storage
         // let inputContent = JSON.parse(localStorage.getItem(inputContentKey));
 
     
         // loops through boxes again setting the text content to the stored value
-        inputBoxes[i].textContent = localStorage.getItem(inputContentKey);
+        inputBoxes[i].value = localStorage.getItem(inputContentKey);
 
-        console.log(inputBoxes[3].textContent)
+        // console.log(inputBoxes[3].textContent)
     }
 
     
