@@ -1,3 +1,4 @@
 # Day Planner Built Using JS
 
-For this project I was tasked with building a day planner with timed elements that update dynamically based on past, present or future. Currently the site is incomplete as I haven't gotten the local storage to work properly. All other elements are functioning as desired.
+For this project I was tasked with building a day planner with timed elements that update dynamically based on past, present or future. I chose to build the entirety of the HTML in one page rather than dynamically through JS as all of the elements are static, just the text of elements in the page changes. The most challenging aspect for me was dyncamically storing items in the local storage, and then retrieving them with a dynamic process flow as well. The final version does so by completing two loops over the input area based on button clicks or page reload. The webpage can be reached [here.](https://ajaws2022.github.io/Stuff-Things-Times-Tracker/) And an example image of the site is below!
+![Day Planner With Eight Blocks for different hours](./assets/images/siteExample.png)
