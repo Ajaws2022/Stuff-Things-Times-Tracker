@@ -1,29 +1,16 @@
-// create a function that creates the js moment to display the current date and time
-
-
-// create a function that sets the text entry as an object in local storage when the save item is clicked
-
-// parse the object back to the list as a list item to make sure it stays on refresh
-
-// create an if statement that compares the current time to the list and changes the color based on past, present, or future
-
-//   var icon = $("#9am").button( "option", "icon" );
-var mainBlock = document.querySelector('.mainBlock')
-// var block = document.createElement("div")
-// var timeBlock = document.createElement("h1")
-// var entryArea = document.createElement("input")
-
 // used querySelectorAll to select all buttons with the same class
 var subButton = document.querySelectorAll(".subButton")
 
- function setTime(){
+// sets the current time in the header
+function setTime(){
     var today = moment();
 
     $(".dateAndTime").text(today.format("MMM Do, YYYY  h:mm a"));
     
     console.log("I'm alive")
 }
-// function(){setTime()}
+
+// This function checks the time and changes the class that gets applied to the input boxes accordingly
 
 function checkTime(){
     var currTime = parseInt(moment().format('H'))
@@ -48,6 +35,7 @@ function checkTime(){
     }
 }
 
+// runs the set time and check time functions every minute to update the time and appearance
 setInterval(
     function(){
         setTime()
@@ -56,7 +44,7 @@ setInterval(
     (1000 * 60) * 1
 );
 
-
+// submits the value of a given input box to local storage with a key based on the hour block
 function submitTimes(){
     var inputValue = $(this).siblings(".input").val()
     var inputKey = $(this).siblings('h3').text()
@@ -68,15 +56,15 @@ function submitTimes(){
     localStorage.setItem(inputKey, `${inputValue}`)
 
    
-
-    }
+}
+// grabs all of the input boxes
 var inputBoxes = document.querySelectorAll('.input');
 
+// This function loops through the boxes to set their text content by using the associated key name
 function setText(){
     for(let i = 0; i<inputBoxes.length; i++){
-        // loops through all of the input elements setting the text content to an empty string
-        // inputBoxes[i].textContent = ("");
-        // creates a dynamic key for whichever element it gets associated with
+        // creates a map to loop through the boxes based on their ID number that gets set to the key name
+        // this had to be used because the 24 hour designation of the ID's on the inputs did not match the key names
         var index_to_time = {
             9: "9am",
             10: "10am",
@@ -87,27 +75,20 @@ function setText(){
             15: "3pm",
             16: "4pm"
         }
+
+        // starts a loop to generate keys at the number 9
         let inputContentKey = index_to_time[i + 9];
 
-        // Uses the key name generated above to pull and parse an item from storage
-        // let inputContent = JSON.parse(localStorage.getItem(inputContentKey));
-
-    
         // loops through boxes again setting the text content to the stored value
         inputBoxes[i].value = localStorage.getItem(inputContentKey);
-
-        // console.log(inputBoxes[3].textContent)
     }
-
-    
 }
 
 checkTime()
-setTime()
-// setText()
-window.addEventListener('load', setText)
 
-// subButton.addEventListener('click', submitTimes)
+setTime()
+
+window.addEventListener('load', setText)
 
 // needed a loop to target all of the buttons on the page and not the first
 for(let i = 0; i<subButton.length; i++){
